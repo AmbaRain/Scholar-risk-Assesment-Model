@@ -1,0 +1,693 @@
+<!doctype html>
+
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Scholar Profile - Jordan Davis</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              surface: "#fff7fe",
+              "on-primary-container": "#e4c2ff",
+              "on-error-container": "#93000a",
+              "error-container": "#ffdad6",
+              error: "#ba1a1a",
+              "tertiary-container": "#caa900",
+              "surface-variant": "#eadfec",
+              "on-tertiary-container": "#4c3e00",
+              "on-secondary-fixed-variant": "#583975",
+              "tertiary-fixed": "#ffe171",
+              "on-secondary-container": "#644481",
+              background: "#fff7fe",
+              "surface-dim": "#e1d7e3",
+              "surface-container-lowest": "#ffffff",
+              "on-secondary": "#ffffff",
+              "on-primary": "#ffffff",
+              "on-tertiary-fixed-variant": "#554600",
+              "on-error": "#ffffff",
+              secondary: "#71508e",
+              "inverse-primary": "#deb7ff",
+              "inverse-on-surface": "#f8edfa",
+              "surface-container": "#f5eaf7",
+              "on-background": "#1f1a22",
+              "surface-container-high": "#efe5f1",
+              "on-tertiary": "#ffffff",
+              "on-tertiary-fixed": "#221b00",
+              "on-surface-variant": "#4c4353",
+              "on-secondary-fixed": "#2a0946",
+              "inverse-surface": "#342e38",
+              "surface-container-low": "#fbf0fd",
+              "surface-tint": "#8234c6",
+              "on-primary-fixed-variant": "#680eac",
+              "secondary-fixed-dim": "#deb8fe",
+              "on-surface": "#1f1a22",
+              tertiary: "#705d00",
+              "secondary-fixed": "#f1dbff",
+              "outline-variant": "#cfc2d5",
+              outline: "#7e7384",
+              "surface-container-highest": "#eadfec",
+              "primary-container": "#7b2cbf",
+              "primary-fixed-dim": "#deb7ff",
+              "on-primary-fixed": "#2d0050",
+              primary: "#6100a4",
+              "surface-bright": "#fff7fe",
+              "tertiary-fixed-dim": "#e9c400",
+              "secondary-container": "#deb8fe",
+              "primary-fixed": "#f1dbff",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            fontFamily: {
+              headline: ["Plus Jakarta Sans"],
+              display: ["Plus Jakarta Sans"],
+              body: ["Plus Jakarta Sans"],
+              label: ["Plus Jakarta Sans"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: "Plus Jakarta Sans", sans-serif;
+      }
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+      .glass-panel {
+        background: rgba(255, 247, 254, 0.8);
+        backdrop-filter: blur(24px);
+      }
+    </style>
+  </head>
+  <body class="bg-surface text-on-surface min-h-screen">
+    <!-- TopNavBar (Shared Component) -->
+    <nav
+      class="bg-[#fff7fe]/80 backdrop-blur-md dark:bg-slate-950/80 font-['Plus_Jakarta_Sans'] text-sm tracking-tight fixed top-0 z-50 w-full px-8 h-16 flex justify-between items-center shadow-none"
+    >
+      <div class="flex items-center gap-8">
+        <span
+          class="text-xl font-extrabold tracking-tighter text-[#6100a4] dark:text-purple-300"
+          >Luminous Curator</span
+        >
+        <div class="hidden md:flex items-center gap-6">
+          <a
+            class="text-[#4c4353] dark:text-slate-400 font-medium hover:bg-[#fbf0fd] transition-colors px-3 py-2 rounded-lg"
+            href="#"
+            >Directory</a
+          >
+          <a
+            class="text-[#6100a4] font-bold border-b-2 border-[#7b2cbf] pb-1"
+            href="#"
+            >Risk Hub</a
+          >
+          <a
+            class="text-[#4c4353] dark:text-slate-400 font-medium hover:bg-[#fbf0fd] transition-colors px-3 py-2 rounded-lg"
+            href="#"
+            >Interventions</a
+          >
+        </div>
+      </div>
+      <div class="flex items-center gap-4">
+        <button
+          class="material-symbols-outlined text-on-surface-variant hover:bg-[#fbf0fd] p-2 rounded-full transition-all"
+        >
+          notifications
+        </button>
+        <button
+          class="material-symbols-outlined text-on-surface-variant hover:bg-[#fbf0fd] p-2 rounded-full transition-all"
+        >
+          help
+        </button>
+        <div
+          class="h-8 w-8 rounded-full bg-primary-container flex items-center justify-center text-white overflow-hidden"
+        >
+          <img
+            alt="Manager Profile"
+            data-alt="close up professional headshot of a female university program manager with a friendly smile wearing business casual attire"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2GZgn5RB-cZCzbACdIKhAKuh-2pZc_Ws4MPxi3JjKcsiSfJpyOwuU6MIaI-Jwb9FD5MC8WzFTSwvJh7ZnvIkT-RW1-PGcSIwsIAHDvpxkfpz8JMYl3-hsqVdvT4JCZ819AeefCVERSaVg1oRO9m5TP6VnVMx2EhkOkzrJ_oeVSUN03VmJ893qslB1sFZeSiGpStCoeYvO-zPd0PQNzJO2C7wpuu5GNRqbWqTZ0eN3kszc3rYvt4T_BpCuc-8CuWhkqedqxfNsROU"
+          />
+        </div>
+      </div>
+    </nav>
+    <!-- Sidebar (Shared Component) -->
+    <aside
+      class="h-screen w-64 fixed left-0 top-0 flex flex-col bg-[#efe5f1] dark:bg-slate-900 font-['Plus_Jakarta_Sans'] text-sm font-semibold p-6 space-y-8 pt-24 hidden lg:flex"
+    >
+      <div class="flex items-center gap-3 px-2">
+        <div
+          class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center text-white"
+        >
+          <span
+            class="material-symbols-outlined"
+            style="font-variation-settings: &quot;FILL&quot; 1"
+            >school</span
+          >
+        </div>
+        <div>
+          <h2
+            class="text-lg font-black text-[#1f1a22] dark:text-white leading-tight"
+          >
+            Program Hub
+          </h2>
+          <p class="text-xs text-on-surface-variant font-medium">
+            Manager Suite
+          </p>
+        </div>
+      </div>
+      <nav class="flex flex-col space-y-2">
+        <a
+          class="flex items-center gap-3 px-4 py-3 bg-white dark:bg-slate-800 text-[#6100a4] dark:text-purple-300 rounded-xl shadow-sm shadow-purple-900/5 transition-all hover:translate-x-1 duration-200"
+          href="#"
+        >
+          <span class="material-symbols-outlined">dashboard</span> Risk Hub
+        </a>
+        <a
+          class="flex items-center gap-3 px-4 py-3 text-[#4c4353] dark:text-slate-400 hover:text-[#6100a4] hover:bg-[#fbf0fd] rounded-xl transition-all hover:translate-x-1 duration-200"
+          href="#"
+        >
+          <span class="material-symbols-outlined">group</span> Directory
+        </a>
+        <a
+          class="flex items-center gap-3 px-4 py-3 text-[#4c4353] dark:text-slate-400 hover:text-[#6100a4] hover:bg-[#fbf0fd] rounded-xl transition-all hover:translate-x-1 duration-200"
+          href="#"
+        >
+          <span class="material-symbols-outlined">analytics</span> Reports
+        </a>
+        <a
+          class="flex items-center gap-3 px-4 py-3 text-[#4c4353] dark:text-slate-400 hover:text-[#6100a4] hover:bg-[#fbf0fd] rounded-xl transition-all hover:translate-x-1 duration-200"
+          href="#"
+        >
+          <span class="material-symbols-outlined">assignment_turned_in</span>
+          Interventions
+        </a>
+        <a
+          class="flex items-center gap-3 px-4 py-3 text-[#4c4353] dark:text-slate-400 hover:text-[#6100a4] hover:bg-[#fbf0fd] rounded-xl transition-all hover:translate-x-1 duration-200"
+          href="#"
+        >
+          <span class="material-symbols-outlined">school</span> Programs
+        </a>
+      </nav>
+      <div class="mt-auto">
+        <button
+          class="w-full bg-primary-container text-white py-3 rounded-full font-bold shadow-lg shadow-primary/20 hover:scale-105 transition-all"
+        >
+          Generate Report
+        </button>
+      </div>
+    </aside>
+    <!-- Main Content Canvas -->
+    <main class="lg:ml-64 pt-24 pb-12 px-8">
+      <!-- Profile Header Section -->
+      <header
+        class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10"
+      >
+        <div class="flex items-center gap-6">
+          <div class="relative">
+            <div
+              class="w-28 h-28 rounded-3xl bg-surface-container-highest overflow-hidden ring-4 ring-white shadow-xl"
+            >
+              <img
+                alt="Jordan Davis"
+                data-alt="Portrait of a male college student with glasses and a soft thoughtful expression in a university library setting with natural morning light"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCATCvJugDLzNOOaYcmx1Z1n0vsZisQ3WYLuPXuYiwH7QbN0PUOIXRo-SN9m5FyQ_L2gwmsAR9rS79ld_H-LlasX5qoQouO07PcUqrxaK5DOGXcbhKL6sOLTxLEDuWqWDsq9JdyJmkqndX4OFy_jUhR1qC_nalykOayuRNDJk-DzoOOG3-NSNq7Rohe8zqP_AZeN9PtftgAjDXlbL0n5wQnFouLnOgXYoWoKk2usEkn4wDiswmo8EXIy-Bs1Cb8GNTQOQ5J5DEEUA"
+              />
+            </div>
+            <div
+              class="absolute -bottom-2 -right-2 bg-error text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest shadow-lg"
+            >
+              At Risk
+            </div>
+          </div>
+          <div>
+            <nav class="flex gap-2 mb-2">
+              <span
+                class="bg-surface-container-low text-on-surface-variant text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-tighter"
+                >Undergraduate</span
+              >
+              <span
+                class="bg-surface-container-low text-on-surface-variant text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-tighter"
+                >Cohort 2024</span
+              >
+            </nav>
+            <h1 class="text-4xl font-black text-on-surface tracking-tighter">
+              Jordan Davis
+            </h1>
+            <p
+              class="text-on-surface-variant font-medium flex items-center gap-2"
+            >
+              ID: #SCH-99203 <span class="opacity-30">•</span> Major: Modern
+              History
+            </p>
+          </div>
+        </div>
+        <div class="flex gap-3">
+          <button
+            class="px-6 py-3 rounded-full bg-secondary-container text-on-secondary-container font-bold flex items-center gap-2 hover:bg-opacity-80 transition-all active:scale-95"
+          >
+            <span class="material-symbols-outlined text-lg">mail</span> Message
+          </button>
+          <button
+            class="px-8 py-3 rounded-full bg-gradient-to-r from-primary to-primary-container text-white font-bold flex items-center gap-2 shadow-xl shadow-primary/20 hover:opacity-90 transition-all active:scale-95"
+          >
+            <span class="material-symbols-outlined text-lg"
+              >calendar_today</span
+            >
+            Schedule Meeting
+          </button>
+        </div>
+      </header>
+      <!-- Metric Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+        <div
+          class="bg-surface-container-lowest p-6 rounded-3xl shadow-sm border border-outline-variant/10 group hover:shadow-md transition-shadow"
+        >
+          <div class="flex justify-between items-start mb-4">
+            <div class="p-3 bg-surface-container-low rounded-2xl text-primary">
+              <span class="material-symbols-outlined">grade</span>
+            </div>
+            <span class="text-error font-bold text-xs flex items-center gap-1">
+              <span class="material-symbols-outlined text-sm"
+                >trending_down</span
+              >
+              -0.4
+            </span>
+          </div>
+          <p
+            class="text-label text-on-surface-variant font-semibold text-xs uppercase tracking-widest mb-1"
+          >
+            Current GPA
+          </p>
+          <h3 class="text-4xl font-black text-on-surface tracking-tighter">
+            2.41
+          </h3>
+        </div>
+        <div
+          class="bg-surface-container-lowest p-6 rounded-3xl shadow-sm border border-outline-variant/10 group hover:shadow-md transition-shadow"
+        >
+          <div class="flex justify-between items-start mb-4">
+            <div
+              class="p-3 bg-surface-container-low rounded-2xl text-secondary"
+            >
+              <span class="material-symbols-outlined">event_available</span>
+            </div>
+            <span class="text-error font-bold text-xs flex items-center gap-1">
+              <span class="material-symbols-outlined text-sm"
+                >trending_down</span
+              >
+              -12%
+            </span>
+          </div>
+          <p
+            class="text-label text-on-surface-variant font-semibold text-xs uppercase tracking-widest mb-1"
+          >
+            Attendance Rate
+          </p>
+          <h3 class="text-4xl font-black text-on-surface tracking-tighter">
+            74%
+          </h3>
+        </div>
+        <div
+          class="bg-surface-container-lowest p-6 rounded-3xl shadow-sm border border-outline-variant/10 group hover:shadow-md transition-shadow"
+        >
+          <div class="flex justify-between items-start mb-4">
+            <div class="p-3 bg-surface-container-low rounded-2xl text-tertiary">
+              <span class="material-symbols-outlined">task_alt</span>
+            </div>
+            <span
+              class="text-on-surface-variant font-bold text-xs flex items-center gap-1"
+            >
+              <span class="material-symbols-outlined text-sm"
+                >horizontal_rule</span
+              >
+              Steady
+            </span>
+          </div>
+          <p
+            class="text-label text-on-surface-variant font-semibold text-xs uppercase tracking-widest mb-1"
+          >
+            Assignment Completion
+          </p>
+          <h3 class="text-4xl font-black text-on-surface tracking-tighter">
+            68%
+          </h3>
+        </div>
+      </div>
+      <!-- Main Layout: Performance & Risk Factors -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-8">
+        <!-- Performance History Chart/Timeline -->
+        <div
+          class="lg:col-span-8 bg-surface-container-lowest p-8 rounded-3xl border border-outline-variant/10"
+        >
+          <div class="flex justify-between items-center mb-8">
+            <h2 class="text-xl font-bold tracking-tight">
+              Performance History
+            </h2>
+            <div class="flex gap-2">
+              <button
+                class="px-3 py-1 bg-tertiary-fixed text-on-tertiary-fixed text-[10px] font-bold rounded-full"
+              >
+                Weekly
+              </button>
+              <button
+                class="px-3 py-1 text-on-surface-variant text-[10px] font-bold rounded-full"
+              >
+                Monthly
+              </button>
+            </div>
+          </div>
+          <div class="relative h-64 w-full flex items-end justify-between px-4">
+            <!-- Faux Bar Chart with Academic Vibes -->
+            <div
+              class="w-10 bg-primary/20 rounded-t-xl h-[60%] flex flex-col items-center justify-end group transition-all hover:bg-primary/40 relative"
+            >
+              <div
+                class="absolute -top-8 hidden group-hover:block bg-on-surface text-surface text-[10px] font-bold px-2 py-1 rounded"
+              >
+                3.2
+              </div>
+              <div class="w-full bg-primary rounded-t-xl h-[50%]"></div>
+              <span
+                class="absolute -bottom-8 text-[10px] font-bold text-on-surface-variant"
+                >Week 1</span
+              >
+            </div>
+            <div
+              class="w-10 bg-primary/20 rounded-t-xl h-[70%] flex flex-col items-center justify-end group transition-all hover:bg-primary/40 relative"
+            >
+              <div class="w-full bg-primary rounded-t-xl h-[65%]"></div>
+              <span
+                class="absolute -bottom-8 text-[10px] font-bold text-on-surface-variant"
+                >Week 2</span
+              >
+            </div>
+            <div
+              class="w-10 bg-primary/20 rounded-t-xl h-[55%] flex flex-col items-center justify-end group transition-all hover:bg-primary/40 relative"
+            >
+              <div class="w-full bg-primary rounded-t-xl h-[40%]"></div>
+              <span
+                class="absolute -bottom-8 text-[10px] font-bold text-on-surface-variant"
+                >Week 3</span
+              >
+            </div>
+            <div
+              class="w-10 bg-primary/20 rounded-t-xl h-[40%] flex flex-col items-center justify-end group transition-all hover:bg-primary/40 relative border-2 border-error/50"
+            >
+              <div class="w-full bg-error/70 rounded-t-xl h-[30%]"></div>
+              <span class="absolute -bottom-8 text-[10px] font-bold text-error"
+                >Week 4</span
+              >
+            </div>
+            <div
+              class="w-10 bg-primary/20 rounded-t-xl h-[35%] flex flex-col items-center justify-end group transition-all hover:bg-primary/40 relative border-2 border-error/50"
+            >
+              <div class="w-full bg-error rounded-t-xl h-[20%]"></div>
+              <span class="absolute -bottom-8 text-[10px] font-bold text-error"
+                >Week 5</span
+              >
+            </div>
+            <div
+              class="w-10 bg-primary/20 rounded-t-xl h-[45%] flex flex-col items-center justify-end group transition-all hover:bg-primary/40 relative"
+            >
+              <div class="w-full bg-primary rounded-t-xl h-[35%]"></div>
+              <span
+                class="absolute -bottom-8 text-[10px] font-bold text-on-surface-variant"
+                >Week 6</span
+              >
+            </div>
+          </div>
+          <div class="mt-16 pt-8 border-t border-outline-variant/10 flex gap-8">
+            <div class="flex items-center gap-3">
+              <div class="w-3 h-3 rounded-full bg-primary"></div>
+              <span class="text-xs font-semibold text-on-surface-variant"
+                >Normal Performance</span
+              >
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-3 h-3 rounded-full bg-error"></div>
+              <span class="text-xs font-semibold text-on-surface-variant"
+                >Risk Alert Level</span
+              >
+            </div>
+          </div>
+        </div>
+        <!-- Risk Factors Sidebar -->
+        <div class="lg:col-span-4 flex flex-col gap-6">
+          <div class="bg-surface-container-high p-6 rounded-3xl">
+            <h3
+              class="text-lg font-black text-primary mb-4 flex items-center gap-2"
+            >
+              <span class="material-symbols-outlined text-error">warning</span>
+              Risk Factors
+            </h3>
+            <div class="space-y-4">
+              <div
+                class="bg-white p-4 rounded-2xl flex gap-4 border border-error/10"
+              >
+                <span class="material-symbols-outlined text-error mt-1"
+                  >running_with_errors</span
+                >
+                <div>
+                  <p class="text-sm font-bold text-on-surface leading-tight">
+                    Missed 3 consecutive lectures
+                  </p>
+                  <p
+                    class="text-[10px] font-semibold text-on-surface-variant mt-1 uppercase tracking-tight"
+                  >
+                    Modern History 101
+                  </p>
+                </div>
+              </div>
+              <div
+                class="bg-white p-4 rounded-2xl flex gap-4 border border-error/10"
+              >
+                <span class="material-symbols-outlined text-error mt-1"
+                  >assignment_late</span
+                >
+                <div>
+                  <p class="text-sm font-bold text-on-surface leading-tight">
+                    Failing 'Modern History' Quiz
+                  </p>
+                  <p
+                    class="text-[10px] font-semibold text-on-surface-variant mt-1 uppercase tracking-tight"
+                  >
+                    Score: 42% (Passing: 60%)
+                  </p>
+                </div>
+              </div>
+              <div
+                class="bg-white p-4 rounded-2xl flex gap-4 border border-outline-variant/20"
+              >
+                <span class="material-symbols-outlined text-outline mt-1"
+                  >forum</span
+                >
+                <div>
+                  <p class="text-sm font-bold text-on-surface leading-tight">
+                    Zero Engagement on LMS
+                  </p>
+                  <p
+                    class="text-[10px] font-semibold text-on-surface-variant mt-1 uppercase tracking-tight"
+                  >
+                    Last active 9 days ago
+                  </p>
+                </div>
+              </div>
+            </div>
+            <button
+              class="w-full mt-6 py-2 text-xs font-black text-on-surface-variant hover:text-primary transition-colors underline underline-offset-4"
+            >
+              View All Flags
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- Bottom Sections: Notes & Interventions -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <!-- Advisor Notes -->
+        <div
+          class="bg-surface-container-lowest p-8 rounded-3xl border border-outline-variant/10 flex flex-col"
+        >
+          <div class="flex justify-between items-center mb-6">
+            <h2 class="text-xl font-bold tracking-tight">Advisor Notes</h2>
+            <button
+              class="material-symbols-outlined text-primary hover:bg-surface-container p-2 rounded-full transition-all"
+            >
+              add_circle
+            </button>
+          </div>
+          <div class="flex-1 space-y-6">
+            <div class="relative pl-6 border-l-2 border-primary/20">
+              <div
+                class="absolute -left-[5px] top-0 w-2 h-2 rounded-full bg-primary"
+              ></div>
+              <p class="text-xs font-bold text-on-surface-variant mb-1">
+                Oct 12, 2023 <span class="mx-2 opacity-30">•</span> Dr. Sarah
+                Miller
+              </p>
+              <p class="text-sm font-medium leading-relaxed">
+                Met with Jordan briefly after the History seminar. He mentioned
+                personal difficulties at home impacting his study schedule.
+                Agreed to follow up in 2 weeks.
+              </p>
+            </div>
+            <div class="relative pl-6 border-l-2 border-primary/20">
+              <div
+                class="absolute -left-[5px] top-0 w-2 h-2 rounded-full bg-primary/40"
+              ></div>
+              <p class="text-xs font-bold text-on-surface-variant mb-1">
+                Sep 28, 2023 <span class="mx-2 opacity-30">•</span> Dr. Sarah
+                Miller
+              </p>
+              <p class="text-sm font-medium leading-relaxed">
+                Initial warning triggered by attendance drop. Jordan was
+                unresponsive to the first check-in email.
+              </p>
+            </div>
+          </div>
+          <div class="mt-8">
+            <textarea
+              class="w-full bg-surface-container-low border-none rounded-2xl p-4 text-sm focus:ring-2 focus:ring-primary/20 placeholder:text-on-surface-variant/40"
+              placeholder="Type a new confidential note..."
+            ></textarea>
+            <div class="flex justify-end mt-2">
+              <button
+                class="bg-primary text-white px-6 py-2 rounded-full text-xs font-bold shadow-md active:scale-95 transition-all"
+              >
+                Save Note
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- Previous Interventions -->
+        <div
+          class="bg-surface-container-lowest p-8 rounded-3xl border border-outline-variant/10"
+        >
+          <h2 class="text-xl font-bold tracking-tight mb-6">
+            Intervention History
+          </h2>
+          <div class="overflow-hidden">
+            <table class="w-full text-left">
+              <thead>
+                <tr class="border-b border-outline-variant/10">
+                  <th
+                    class="pb-4 text-[10px] font-black uppercase tracking-widest text-on-surface-variant"
+                  >
+                    Action
+                  </th>
+                  <th
+                    class="pb-4 text-[10px] font-black uppercase tracking-widest text-on-surface-variant"
+                  >
+                    Date
+                  </th>
+                  <th
+                    class="pb-4 text-[10px] font-black uppercase tracking-widest text-on-surface-variant"
+                  >
+                    Status
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="text-sm">
+                <tr class="border-b border-outline-variant/5">
+                  <td class="py-4 font-bold">Academic Counseling</td>
+                  <td class="py-4 text-on-surface-variant">Oct 15, 2023</td>
+                  <td class="py-4">
+                    <span
+                      class="bg-tertiary-fixed text-on-tertiary-fixed px-3 py-1 rounded-full text-[10px] font-black uppercase"
+                      >Scheduled</span
+                    >
+                  </td>
+                </tr>
+                <tr class="border-b border-outline-variant/5">
+                  <td class="py-4 font-bold">Standard Warning Email</td>
+                  <td class="py-4 text-on-surface-variant">Oct 05, 2023</td>
+                  <td class="py-4">
+                    <span
+                      class="bg-surface-container-high text-on-surface-variant px-3 py-1 rounded-full text-[10px] font-black uppercase"
+                      >Sent</span
+                    >
+                  </td>
+                </tr>
+                <tr class="border-b border-outline-variant/5">
+                  <td class="py-4 font-bold">Peer Tutor Assigned</td>
+                  <td class="py-4 text-on-surface-variant">Sep 20, 2023</td>
+                  <td class="py-4">
+                    <span
+                      class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-[10px] font-black uppercase"
+                      >Active</span
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <td class="py-4 font-bold">Financial Aid Review</td>
+                  <td class="py-4 text-on-surface-variant">Aug 12, 2023</td>
+                  <td class="py-4">
+                    <span
+                      class="bg-surface-container-high text-on-surface-variant px-3 py-1 rounded-full text-[10px] font-black uppercase"
+                      >Completed</span
+                    >
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <button
+            class="w-full mt-6 py-4 rounded-2xl border-2 border-dashed border-outline-variant/30 text-on-surface-variant font-bold text-xs flex items-center justify-center gap-2 hover:bg-surface-container-low transition-colors"
+          >
+            <span class="material-symbols-outlined text-sm">add</span> New
+            Intervention Strategy
+          </button>
+        </div>
+      </div>
+    </main>
+    <!-- Mobile Navigation (Shared Component) -->
+    <nav
+      class="md:hidden fixed bottom-0 left-0 w-full bg-[#fff7fe]/80 backdrop-blur-md flex justify-around items-center h-16 z-50 shadow-2xl"
+    >
+      <button class="flex flex-col items-center gap-1 text-[#6100a4] font-bold">
+        <span
+          class="material-symbols-outlined"
+          style="font-variation-settings: &quot;FILL&quot; 1"
+          >dashboard</span
+        >
+        <span class="text-[10px]">Risk Hub</span>
+      </button>
+      <button class="flex flex-col items-center gap-1 text-[#4c4353]">
+        <span class="material-symbols-outlined">group</span>
+        <span class="text-[10px]">Directory</span>
+      </button>
+      <button class="flex flex-col items-center gap-1 text-[#4c4353]">
+        <span class="material-symbols-outlined">analytics</span>
+        <span class="text-[10px]">Reports</span>
+      </button>
+      <button class="flex flex-col items-center gap-1 text-[#4c4353]">
+        <span class="material-symbols-outlined">assignment_turned_in</span>
+        <span class="text-[10px]">Interventions</span>
+      </button>
+    </nav>
+  </body>
+</html>

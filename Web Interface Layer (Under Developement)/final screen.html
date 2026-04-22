@@ -1,0 +1,542 @@
+<!doctype html>
+
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Intervention Planner | Luminous Curator</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link href="final-screen.css" rel="stylesheet" />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              surface: "#fff7fe",
+              "on-primary-container": "#e4c2ff",
+              "on-error-container": "#93000a",
+              "error-container": "#ffdad6",
+              error: "#ba1a1a",
+              "tertiary-container": "#caa900",
+              "surface-variant": "#eadfec",
+              "on-tertiary-container": "#4c3e00",
+              "on-secondary-fixed-variant": "#583975",
+              "tertiary-fixed": "#ffe171",
+              "on-secondary-container": "#644481",
+              background: "#fff7fe",
+              "surface-dim": "#e1d7e3",
+              "surface-container-lowest": "#ffffff",
+              "on-secondary": "#ffffff",
+              "on-primary": "#ffffff",
+              "on-tertiary-fixed-variant": "#554600",
+              "on-error": "#ffffff",
+              secondary: "#71508e",
+              "inverse-primary": "#deb7ff",
+              "inverse-on-surface": "#f8edfa",
+              "surface-container": "#f5eaf7",
+              "on-background": "#1f1a22",
+              "surface-container-high": "#efe5f1",
+              "on-tertiary": "#ffffff",
+              "on-tertiary-fixed": "#221b00",
+              "on-surface-variant": "#4c4353",
+              "on-secondary-fixed": "#2a0946",
+              "inverse-surface": "#342e38",
+              "surface-container-low": "#fbf0fd",
+              "surface-tint": "#8234c6",
+              "on-primary-fixed-variant": "#680eac",
+              "secondary-fixed-dim": "#deb8fe",
+              "on-surface": "#1f1a22",
+              tertiary: "#705d00",
+              "secondary-fixed": "#f1dbff",
+              "outline-variant": "#cfc2d5",
+              outline: "#7e7384",
+              "surface-container-highest": "#eadfec",
+              "primary-container": "#7b2cbf",
+              "primary-fixed-dim": "#deb7ff",
+              "on-primary-fixed": "#2d0050",
+              primary: "#6100a4",
+              "surface-bright": "#fff7fe",
+              "tertiary-fixed-dim": "#e9c400",
+              "secondary-container": "#deb8fe",
+              "primary-fixed": "#f1dbff",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            fontFamily: {
+              headline: ["Plus Jakarta Sans"],
+              display: ["Plus Jakarta Sans"],
+              body: ["Plus Jakarta Sans"],
+              label: ["Plus Jakarta Sans"],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-surface text-on-surface min-h-screen">
+    <!-- TopNavBar Implementation -->
+    <header
+      class="fixed top-0 z-50 w-full h-16 px-8 flex justify-between items-center bg-[#fff7fe]/80 backdrop-blur-md dark:bg-slate-950/80 shadow-none font-['Plus_Jakarta_Sans'] text-sm tracking-tight"
+    >
+      <div class="flex items-center gap-8">
+        <span
+          class="text-xl font-extrabold tracking-tighter text-[#6100a4] dark:text-purple-300"
+          >Luminous Curator</span
+        >
+        <nav class="hidden md:flex items-center gap-6">
+          <a
+            class="text-[#4c4353] dark:text-slate-400 font-medium hover:bg-[#fbf0fd] dark:hover:bg-slate-800 transition-colors px-2 py-1 rounded"
+            href="#"
+            >Overview</a
+          >
+          <a
+            class="text-[#6100a4] font-bold border-b-2 border-[#7b2cbf] pb-1"
+            href="#"
+            >Interventions</a
+          >
+          <a
+            class="text-[#4c4353] dark:text-slate-400 font-medium hover:bg-[#fbf0fd] dark:hover:bg-slate-800 transition-colors px-2 py-1 rounded"
+            href="#"
+            >Scholars</a
+          >
+        </nav>
+      </div>
+      <div class="flex items-center gap-4">
+        <div class="relative hidden lg:block">
+          <span
+            class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline"
+            >search</span
+          >
+          <input
+            class="pl-10 pr-4 py-2 bg-surface-container rounded-full text-sm border-none focus:ring-2 focus:ring-primary/20 w-64"
+            placeholder="Search strategy..."
+            type="text"
+          />
+        </div>
+        <button
+          class="material-symbols-outlined text-on-surface-variant hover:bg-[#fbf0fd] p-2 rounded-full transition-colors"
+        >
+          notifications
+        </button>
+        <button
+          class="material-symbols-outlined text-on-surface-variant hover:bg-[#fbf0fd] p-2 rounded-full transition-colors"
+        >
+          help
+        </button>
+        <div
+          class="h-8 w-8 rounded-full overflow-hidden bg-primary-container ml-2"
+        >
+          <img
+            alt="Manager Profile"
+            data-alt="close-up portrait of a professional woman with a kind smile, soft studio lighting, high-end corporate photography style"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXbeu35dqENfX0_g9IKGHrKx1qJ45aKUbkuJ5maXlXHQTU721zb2LyFMiBDYJSGDHPNW8TRDEpS83UfFzg9s-6KlI7bF0Rz-aYAz_VG394k6YwlR7Fl-lfVxvr0Eeb3KCq23g4-xtD1mP3ecyt_0ULmv1aNasYPg85M3RNsGo4vXWKBSxRteass8xNTfIfaXsjNe05LKLboAno8iacEBIQaUVLbQ7E8Lok7H4dnoM9RIEhgd1VrVpbQmy8r8sJMDGLq34bSvHnHVk"
+          />
+        </div>
+      </div>
+    </header>
+    <!-- SideNavBar Implementation -->
+    <aside
+      class="h-screen w-64 fixed left-0 top-0 flex flex-col bg-[#efe5f1] dark:bg-slate-900 p-6 space-y-8 z-40 pt-20"
+    >
+      <div class="flex items-center gap-3 px-2">
+        <div
+          class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-white"
+        >
+          <span class="material-symbols-outlined">school</span>
+        </div>
+        <div>
+          <p
+            class="text-lg font-black text-[#1f1a22] dark:text-white leading-tight"
+          >
+            Program Hub
+          </p>
+          <p
+            class="text-xs font-semibold text-on-surface-variant/70 uppercase tracking-widest"
+          >
+            Manager Suite
+          </p>
+        </div>
+      </div>
+      <nav class="flex-1 space-y-1">
+        <a
+          class="flex items-center gap-3 p-3 text-[#4c4353] dark:text-slate-400 font-semibold rounded-xl hover:bg-[#fbf0fd] transition-all hover:translate-x-1"
+          href="#"
+        >
+          <span class="material-symbols-outlined">dashboard</span> Risk Hub
+        </a>
+        <a
+          class="flex items-center gap-3 p-3 text-[#4c4353] dark:text-slate-400 font-semibold rounded-xl hover:bg-[#fbf0fd] transition-all hover:translate-x-1"
+          href="#"
+        >
+          <span class="material-symbols-outlined">group</span> Directory
+        </a>
+        <a
+          class="flex items-center gap-3 p-3 text-[#4c4353] dark:text-slate-400 font-semibold rounded-xl hover:bg-[#fbf0fd] transition-all hover:translate-x-1"
+          href="#"
+        >
+          <span class="material-symbols-outlined">analytics</span> Reports
+        </a>
+        <a
+          class="flex items-center gap-3 p-3 bg-white dark:bg-slate-800 text-[#6100a4] dark:text-purple-300 font-semibold rounded-xl shadow-sm shadow-purple-900/5 transition-all hover:translate-x-1"
+          href="#"
+        >
+          <span class="material-symbols-outlined">assignment_turned_in</span>
+          Interventions
+        </a>
+        <a
+          class="flex items-center gap-3 p-3 text-[#4c4353] dark:text-slate-400 font-semibold rounded-xl hover:bg-[#fbf0fd] transition-all hover:translate-x-1"
+          href="#"
+        >
+          <span class="material-symbols-outlined">school</span> Programs
+        </a>
+      </nav>
+      <button
+        class="w-full py-3 bg-gradient-to-r from-primary to-primary-container text-white rounded-full font-bold shadow-lg shadow-primary/10 hover:opacity-90 transition-all active:scale-95"
+      >
+        Generate Report
+      </button>
+    </aside>
+    <!-- Main Content -->
+    <main class="pl-64 pt-16 min-h-screen">
+      <div class="max-w-7xl mx-auto p-8">
+        <!-- Header Section -->
+        <header
+          class="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-4"
+        >
+          <div>
+            <nav
+              class="flex gap-2 text-xs font-bold text-primary mb-2 tracking-widest uppercase"
+            >
+              <span>Interventions</span>
+              <span>/</span>
+              <span class="text-on-surface-variant/60">New Support Plan</span>
+            </nav>
+            <h1
+              class="text-4xl font-extrabold tracking-tight text-on-surface mb-2"
+            >
+              Intervention Planner
+            </h1>
+            <div
+              class="flex items-center gap-3 bg-white rounded-full px-4 py-2 shadow-sm shadow-primary/5 w-fit"
+            >
+              <img
+                alt="Student Profile"
+                class="w-6 h-6 rounded-full"
+                data-alt="circular avatar of a teenage student with a thoughtful expression, soft natural outdoor lighting"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgtNjHt8WakWNSpVV5NB5K-FxMe2eFDrKrvGSxNZFOWnKMJHgyUyLl-0NR1GWhyOBwbZG23qOddCWKP_YSctXRTfviMIp-oZRzgR5qlB5d0dNRAQenSPqhXHOC4mBNw4Rt2oAuDHb_G_rytIVQ0qA_seYRKQi9yH-uTtLxS6hsk64wg-AHGbUskIImh93pzhYJnnokX1xQt-QIDoF64F2DoNSkxGRxiBwok46F6NMU0QnnhbGewASzIQIkN9K7tf_eQsmmGlpYQn0"
+              />
+              <span class="text-sm font-semibold"
+                >Scholar Reference:
+                <span class="text-primary">Jordan D. (Grade 11)</span></span
+              >
+              <span class="w-2 h-2 bg-error rounded-full animate-pulse"></span>
+              <span class="text-[10px] font-bold uppercase text-error"
+                >At Risk: Attendance</span
+              >
+            </div>
+          </div>
+          <div class="hidden lg:block text-right">
+            <p
+              class="text-xs font-bold text-on-surface-variant/50 uppercase tracking-widest mb-1"
+            >
+              Current Success Prob.
+            </p>
+            <div class="text-3xl font-black text-on-surface">64%</div>
+          </div>
+        </header>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          <!-- Strategy Builder (Left Column) -->
+          <section class="lg:col-span-7 space-y-6">
+            <div
+              class="bg-surface-container-lowest rounded-xl p-8 shadow-sm shadow-purple-500/5"
+            >
+              <h2 class="text-xl font-bold mb-6 flex items-center gap-2">
+                <span class="material-symbols-outlined text-primary"
+                  >edit_note</span
+                >
+                Strategy Builder
+              </h2>
+              <form class="space-y-8">
+                <!-- Intervention Types -->
+                <div>
+                  <label
+                    class="block text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-4"
+                    >Select Support Modalities</label
+                  >
+                  <div class="grid grid-cols-3 gap-4">
+                    <button
+                      class="flex flex-col items-center justify-center p-4 rounded-xl bg-primary-container text-white border-none transition-all scale-100 hover:scale-[1.02]"
+                      type="button"
+                    >
+                      <span class="material-symbols-outlined icon-filled mb-2"
+                        >menu_book</span
+                      >
+                      <span class="text-xs font-bold">Tutoring</span>
+                    </button>
+                    <button
+                      class="flex flex-col items-center justify-center p-4 rounded-xl bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high transition-all"
+                      type="button"
+                    >
+                      <span class="material-symbols-outlined mb-2"
+                        >psychology</span
+                      >
+                      <span class="text-xs font-bold">Counseling</span>
+                    </button>
+                    <button
+                      class="flex flex-col items-center justify-center p-4 rounded-xl bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high transition-all"
+                      type="button"
+                    >
+                      <span class="material-symbols-outlined mb-2">groups</span>
+                      <span class="text-xs font-bold">Peer Mentoring</span>
+                    </button>
+                  </div>
+                </div>
+                <!-- Goals -->
+                <div>
+                  <label
+                    class="block text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-2"
+                    >Primary Intervention Goal</label
+                  >
+                  <textarea
+                    class="w-full bg-surface-container border-none rounded-xl p-4 text-sm focus:ring-2 focus:ring-primary/20 min-h-[100px]"
+                    placeholder="Define clear, measurable outcomes (e.g., Increase math test scores by 15%...)"
+                  ></textarea>
+                </div>
+                <!-- Dates -->
+                <div class="grid grid-cols-2 gap-6">
+                  <div>
+                    <label
+                      class="block text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-2"
+                      >Start Date</label
+                    >
+                    <div class="relative">
+                      <span
+                        class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-sm"
+                        >calendar_today</span
+                      >
+                      <input
+                        class="w-full bg-surface-container border-none rounded-lg pl-10 pr-4 py-3 text-sm focus:ring-2 focus:ring-primary/20"
+                        type="date"
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <label
+                      class="block text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-2"
+                      >End Date</label
+                    >
+                    <div class="relative">
+                      <span
+                        class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-sm"
+                        >event</span
+                      >
+                      <input
+                        class="w-full bg-surface-container border-none rounded-lg pl-10 pr-4 py-3 text-sm focus:ring-2 focus:ring-primary/20"
+                        type="date"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <!-- Impact Prediction (Bottom Section within grid context) -->
+            <div
+              class="bg-surface-container-low rounded-xl p-6 border-l-4 border-tertiary-fixed"
+            >
+              <div class="flex items-start gap-4">
+                <div
+                  class="w-12 h-12 rounded-full bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed shrink-0"
+                >
+                  <span class="material-symbols-outlined icon-filled"
+                    >auto_awesome</span
+                  >
+                </div>
+                <div>
+                  <h3
+                    class="text-sm font-extrabold uppercase tracking-widest text-on-tertiary-container mb-1"
+                  >
+                    Impact Prediction
+                  </h3>
+                  <p class="text-sm text-on-surface-variant leading-relaxed">
+                    Based on similar interventions for Grade 11 scholars, this
+                    plan is projected to increase Jordan's success probability
+                    by <span class="font-bold text-primary">+18%</span> within
+                    the first 4 weeks.
+                  </p>
+                  <div
+                    class="mt-4 h-2 w-full bg-white rounded-full overflow-hidden"
+                  >
+                    <div
+                      class="h-full bg-gradient-to-r from-tertiary-fixed to-primary w-[82%] rounded-full"
+                    ></div>
+                  </div>
+                  <p
+                    class="text-[10px] mt-2 font-bold text-on-surface-variant/60"
+                  >
+                    ESTIMATED SUCCESS REACH: 82%
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- Tasks (Right Column) -->
+          <section class="lg:col-span-5 space-y-6">
+            <div
+              class="bg-surface-container-lowest rounded-xl p-8 shadow-sm shadow-purple-500/5 min-h-[500px] flex flex-col"
+            >
+              <div class="flex justify-between items-center mb-6">
+                <h2 class="text-xl font-bold flex items-center gap-2">
+                  <span class="material-symbols-outlined text-primary"
+                    >checklist</span
+                  >
+                  Tasks
+                </h2>
+                <button class="text-xs font-bold text-primary hover:underline">
+                  + Add Task
+                </button>
+              </div>
+              <div class="space-y-3 flex-1">
+                <div
+                  class="group flex items-center gap-4 p-4 rounded-xl bg-surface-container-low border-none hover:bg-surface-container transition-all"
+                >
+                  <div
+                    class="w-5 h-5 rounded border-2 border-outline-variant flex items-center justify-center group-hover:border-primary transition-colors cursor-pointer bg-white"
+                  ></div>
+                  <div class="flex-1">
+                    <p class="text-sm font-semibold">Book Math Lab session</p>
+                    <p
+                      class="text-[10px] text-on-surface-variant/70 font-bold uppercase tracking-tighter"
+                    >
+                      Due in 2 days
+                    </p>
+                  </div>
+                  <span
+                    class="material-symbols-outlined text-outline-variant group-hover:text-error transition-colors cursor-pointer"
+                    >delete</span
+                  >
+                </div>
+                <div
+                  class="group flex items-center gap-4 p-4 rounded-xl bg-surface-container-low border-none hover:bg-surface-container transition-all"
+                >
+                  <div
+                    class="w-5 h-5 rounded border-2 border-outline-variant flex items-center justify-center group-hover:border-primary transition-colors cursor-pointer bg-white"
+                  ></div>
+                  <div class="flex-1">
+                    <p class="text-sm font-semibold">
+                      Check-in email to guardians
+                    </p>
+                    <p
+                      class="text-[10px] text-on-surface-variant/70 font-bold uppercase tracking-tighter"
+                    >
+                      Due tomorrow
+                    </p>
+                  </div>
+                  <span
+                    class="material-symbols-outlined text-outline-variant group-hover:text-error transition-colors cursor-pointer"
+                    >delete</span
+                  >
+                </div>
+                <div
+                  class="group flex items-center gap-4 p-4 rounded-xl bg-surface-container-low border-none hover:bg-surface-container transition-all"
+                >
+                  <div
+                    class="w-5 h-5 rounded border-2 border-outline-variant flex items-center justify-center group-hover:border-primary transition-colors cursor-pointer bg-white"
+                  ></div>
+                  <div class="flex-1">
+                    <p class="text-sm font-semibold">
+                      Assign Peer Mentor: Alex W.
+                    </p>
+                    <p
+                      class="text-[10px] text-on-surface-variant/70 font-bold uppercase tracking-tighter"
+                    >
+                      On Launch
+                    </p>
+                  </div>
+                  <span
+                    class="material-symbols-outlined text-outline-variant group-hover:text-error transition-colors cursor-pointer"
+                    >delete</span
+                  >
+                </div>
+                <!-- Empty State/Placeholder -->
+                <div
+                  class="border-2 border-dashed border-outline-variant/30 rounded-xl p-8 flex flex-col items-center justify-center text-center"
+                >
+                  <span
+                    class="material-symbols-outlined text-outline-variant text-4xl mb-2"
+                    >add_task</span
+                  >
+                  <p class="text-xs font-semibold text-outline">
+                    Click "Add Task" to specify more action items for this plan.
+                  </p>
+                </div>
+              </div>
+              <!-- CTA Section -->
+              <div class="mt-8 pt-8">
+                <button
+                  class="w-full group flex items-center justify-center gap-3 py-4 bg-gradient-to-r from-primary to-primary-container text-white rounded-full font-bold shadow-xl shadow-primary/20 hover:opacity-90 hover:scale-[1.01] transition-all active:scale-95"
+                >
+                  Launch Intervention Plan
+                  <span
+                    class="material-symbols-outlined transition-transform group-hover:translate-x-1"
+                    >rocket_launch</span
+                  >
+                </button>
+                <p
+                  class="text-center text-[10px] mt-4 font-bold text-on-surface-variant/40 uppercase tracking-widest"
+                >
+                  Requires Supervisor Approval: No
+                </p>
+              </div>
+            </div>
+          </section>
+        </div>
+        <!-- Contextual Decorative Elements -->
+        <div
+          class="mt-12 flex items-center justify-center gap-8 opacity-20 grayscale pointer-events-none"
+        >
+          <img
+            alt="Partner Logo"
+            class="h-8"
+            data-alt="minimalist logo of a university, sleek geometric design, purple and gray color palette"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6qksMiZ_vtatErJ5BCDT4A1GKnGX5nUj9P4eRGxgQXc491pUZmmcm9B4h78zZWlb-bUQczy8DP-6d0ziQz2zcSh_1S_nkwYpKfKsp8ELdzrrdw8tjbjjctFt9Rqxg9I9OKvMUs6jvrzFLAbcDgqo4FZ9KJgEmk_spSl5V6Ol1S7L6C7edhVoOzSJBLB0-XcICCzT9H53d1cWlkWqhqNkpwAw3wAh6AE-WtLTHdHeG_fHbtNW-nfPbB1Eghs52YjCN4SSJCdLegCQ"
+          />
+          <img
+            alt="Partner Logo"
+            class="h-8"
+            data-alt="abstract education tech logo, clean lines, professional aesthetic"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_EKFU7YRMBdhw-MWC73MKc-xoecrGNrAAVzeBGSr2zlHRQFvGSkhghQcCYcz3ZLGntTiRmMZC1-xW1ulo2Di-vrCvBif9gqyMe6Z7GYGHEuJiP4c-KNM8n1B4D4GeVKWO8XeIyLON_TZ3chGBmi1I4VLillVmZoQYIjOJJsundOoxcR2ldaIW79RwXVBXidtBdC6ol4qvTCA4UXTTxrhHy4Vr-ruspX6tbZ7CfEhQcwrJpFa70DCDB4nWJgYonk2u94awIrxv9mg"
+          />
+          <img
+            alt="Partner Logo"
+            class="h-8"
+            data-alt="heraldic shield icon modernized, deep purple and gold accents"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfP8KbwbwewfNlDTVTZh5IP4zAVTecyKO6sNTmNg7u-qgxndTZmxGM8BWHhq_IutwNS7OSCFBWSoQxChJSRjTeZmS_rlc4ItMZD5peM2GP08-kI5-cvvRflTgyjU3x-_UN7wRMhYGejojXLuiJK81esMWNlAYSPsCLirkUH_6_cFSc9WvmxfEJAIwmVENQ0esw3uGgapNcAEjA1TN2yiya0buJ_NMe4QoRYKRyBBonm5THdAZlxjrksftNnoLjeL60MTDhpXTbA8Y"
+          />
+        </div>
+      </div>
+    </main>
+    <!-- FAB for quick notes (Mobile only or Global Action) -->
+    <button
+      class="fixed bottom-8 right-8 w-14 h-14 bg-tertiary-fixed text-on-tertiary-fixed rounded-full shadow-2xl flex items-center justify-center hover:scale-110 active:scale-90 transition-all z-50 md:hidden"
+    >
+      <span class="material-symbols-outlined icon-filled">note_add</span>
+    </button>
+  </body>
+</html>

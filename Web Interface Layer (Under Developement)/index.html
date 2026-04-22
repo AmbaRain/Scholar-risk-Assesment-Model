@@ -1,0 +1,750 @@
+<!doctype html>
+
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-fixed": "#f1dbff",
+              "on-error": "#ffffff",
+              "on-primary-fixed": "#2d0050",
+              "surface-container": "#f5eaf7",
+              "error-container": "#ffdad6",
+              "tertiary-container": "#caa900",
+              "primary-container": "#7b2cbf",
+              "inverse-on-surface": "#f8edfa",
+              "surface-container-high": "#efe5f1",
+              "on-primary": "#ffffff",
+              "surface-container-lowest": "#ffffff",
+              "primary-fixed-dim": "#deb7ff",
+              "surface-bright": "#fff7fe",
+              "inverse-primary": "#deb7ff",
+              background: "#fff7fe",
+              "on-error-container": "#93000a",
+              "on-tertiary": "#ffffff",
+              "on-secondary-container": "#644481",
+              "on-primary-fixed-variant": "#680eac",
+              "on-tertiary-fixed-variant": "#554600",
+              error: "#ba1a1a",
+              tertiary: "#705d00",
+              "on-background": "#1f1a22",
+              outline: "#7e7384",
+              "secondary-container": "#deb8fe",
+              "on-surface": "#1f1a22",
+              "surface-tint": "#8234c6",
+              "outline-variant": "#cfc2d5",
+              "on-secondary-fixed-variant": "#583975",
+              "tertiary-fixed": "#ffe171",
+              "on-secondary": "#ffffff",
+              "surface-container-highest": "#eadfec",
+              "on-secondary-fixed": "#2a0946",
+              "primary-fixed": "#f1dbff",
+              surface: "#fff7fe",
+              "on-surface-variant": "#4c4353",
+              "inverse-surface": "#342e38",
+              secondary: "#71508e",
+              "secondary-fixed-dim": "#deb8fe",
+              primary: "#6100a4",
+              "surface-variant": "#eadfec",
+              "surface-dim": "#e1d7e3",
+              "on-primary-container": "#e4c2ff",
+              "surface-container-low": "#fbf0fd",
+              "tertiary-fixed-dim": "#e9c400",
+              "on-tertiary-container": "#4c3e00",
+              "on-tertiary-fixed": "#221b00",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            fontFamily: {
+              headline: ["Plus Jakarta Sans"],
+              body: ["Plus Jakarta Sans"],
+              label: ["Plus Jakarta Sans"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: "Plus Jakarta Sans", sans-serif;
+      }
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+    </style>
+  </head>
+  <body class="bg-background text-on-background min-h-screen">
+    <!-- SideNavBar Anchor -->
+    <aside
+      class="h-screen w-72 fixed left-0 top-0 rounded-r-none bg-[#efe5f1] dark:bg-slate-900 flex flex-col py-10 z-50"
+    >
+      <div class="px-8 mb-10">
+        <h1
+          class="text-xl font-extrabold text-[#6100a4] dark:text-[#7B2CBF] tracking-tighter"
+        >
+          Luminous Hub
+        </h1>
+        <p class="text-xs text-on-surface-variant/70 font-medium">
+          The Curator View
+        </p>
+      </div>
+      <nav class="flex-1 space-y-2">
+        <!-- Active State: Risk Hub -->
+        <a
+          class="flex items-center gap-3 bg-white dark:bg-slate-700 text-[#6100a4] dark:text-white font-bold rounded-l-full ml-4 shadow-sm py-3 px-6 transition-transform translate-x-1"
+          href="#"
+        >
+          <span
+            class="material-symbols-outlined"
+            data-icon="dashboard_customize"
+            >dashboard_customize</span
+          >
+          <span class="text-sm tracking-tight">Risk Hub</span>
+        </a>
+        <a
+          class="flex items-center gap-3 text-[#4c4353] dark:text-slate-400 px-6 py-3 ml-4 hover:bg-[#f5e9f8] dark:hover:bg-slate-800 transition-all duration-300 rounded-l-full"
+          href="#"
+        >
+          <span class="material-symbols-outlined" data-icon="group">group</span>
+          <span class="text-sm tracking-tight">Scholar Directory</span>
+        </a>
+        <a
+          class="flex items-center gap-3 text-[#4c4353] dark:text-slate-400 px-6 py-3 ml-4 hover:bg-[#f5e9f8] dark:hover:bg-slate-800 transition-all duration-300 rounded-l-full"
+          href="#"
+        >
+          <span class="material-symbols-outlined" data-icon="analytics"
+            >analytics</span
+          >
+          <span class="text-sm tracking-tight">Reports</span>
+        </a>
+      </nav>
+      <div class="px-8 mt-auto">
+        <button
+          class="w-full bg-gradient-to-r from-primary to-primary-container text-white py-4 rounded-full font-bold shadow-[0_12px_24px_rgba(97,0,164,0.15)] flex items-center justify-center gap-2 hover:opacity-90 transition-all"
+        >
+          <span class="material-symbols-outlined text-sm">add</span>
+          <span class="text-sm">New Analysis</span>
+        </button>
+        <div class="mt-8 flex items-center gap-3 p-2">
+          <img
+            alt="Program Manager Avatar"
+            class="w-10 h-10 rounded-full object-cover"
+            data-alt="Professional portrait of a program manager in a modern office environment, soft cinematic lighting, neutral background"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWnHmD_r7d7-cfd9oZVtdrsaSmYifp3Ald2F2b3hJOZraat92gxyxGPz-RyzmSSlC4JGm6SdIFXvVZEe7umQnkdml7m2-InOMddpRwbKNSt8aEZaJk_8nwU5E0yo2jpjY2XZG2eYxt0LnJnXlxU3sDJgxhgppG1hRPbPuXYY6CX1lMaL-wwpGRcVncAyHM75bAnsu8jb506IoNtfmE2UuE9i-peLpOSyeYB2XX53ykgdiGYYlYQujqEscWqUFRZSH5lCH631uELpc"
+          />
+          <div>
+            <p class="text-sm font-bold text-on-surface">Alex Rivera</p>
+            <p class="text-[10px] text-on-surface-variant">Lead Curator</p>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <!-- TopNavBar Anchor -->
+    <header
+      class="sticky top-0 w-full z-40 bg-[#fff7fe]/80 backdrop-blur-lg flex justify-between items-center px-12 h-24 ml-72 shadow-[0_4px_24px_rgba(31,26,34,0.04)]"
+    >
+      <div class="flex items-center gap-8 flex-1">
+        <div class="relative w-full max-w-md">
+          <span
+            class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline text-sm"
+            >search</span
+          >
+          <input
+            class="w-full bg-surface-container border-none rounded-full py-3 pl-12 pr-6 text-sm focus:ring-2 focus:ring-primary/20 transition-all"
+            placeholder="Search Scholar or ID..."
+            type="text"
+          />
+        </div>
+      </div>
+      <div class="flex items-center gap-6">
+        <button
+          class="text-on-surface-variant hover:text-primary transition-colors relative"
+        >
+          <span class="material-symbols-outlined">notifications_active</span>
+          <span
+            class="absolute top-0 right-0 w-2 h-2 bg-tertiary-fixed rounded-full ring-2 ring-white"
+          ></span>
+        </button>
+        <button
+          class="text-on-surface-variant hover:text-primary transition-colors"
+        >
+          <span class="material-symbols-outlined">settings</span>
+        </button>
+        <div class="h-8 w-px bg-outline-variant/30 mx-2"></div>
+        <div class="text-right">
+          <p class="text-xs font-bold text-primary">Scholar Risk Hub</p>
+          <p class="text-[10px] text-on-surface-variant">Academic Year 2024</p>
+        </div>
+      </div>
+    </header>
+    <!-- Main Content Area -->
+    <main class="ml-72 p-12 space-y-12">
+      <!-- Summary Cards Section -->
+      <section class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Total Scholars -->
+        <div
+          class="bg-surface-container-lowest p-8 rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.02)] border border-outline-variant/10 relative overflow-hidden group"
+        >
+          <div
+            class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity"
+          >
+            <span class="material-symbols-outlined text-6xl text-primary"
+              >school</span
+            >
+          </div>
+          <p class="text-sm font-bold text-on-surface-variant mb-1">
+            Total Scholars
+          </p>
+          <h3 class="text-4xl font-extrabold text-on-surface tracking-tight">
+            1,284
+          </h3>
+          <div
+            class="mt-4 flex items-center gap-2 text-xs font-bold text-primary"
+          >
+            <span class="material-symbols-outlined text-sm">trending_up</span>
+            <span>+12% from last term</span>
+          </div>
+        </div>
+        <!-- At Risk -->
+        <div
+          class="bg-error-container p-8 rounded-xl shadow-[0_8px_30px_rgb(147,0,10,0.05)] relative overflow-hidden group"
+        >
+          <div
+            class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity"
+          >
+            <span class="material-symbols-outlined text-6xl text-error"
+              >warning</span
+            >
+          </div>
+          <p class="text-sm font-bold text-on-error-container mb-1">At Risk</p>
+          <h3
+            class="text-4xl font-extrabold text-on-error-container tracking-tight"
+          >
+            42
+          </h3>
+          <div
+            class="mt-4 flex items-center gap-2 text-xs font-bold text-on-error-container"
+          >
+            <span class="px-2 py-1 bg-white/40 rounded-full"
+              >Requires Intervention</span
+            >
+          </div>
+        </div>
+        <!-- Succeeding -->
+        <div
+          class="bg-tertiary-fixed p-8 rounded-xl shadow-[0_8px_30px_rgb(112,93,0,0.05)] relative overflow-hidden group"
+        >
+          <div
+            class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity"
+          >
+            <span class="material-symbols-outlined text-6xl text-tertiary"
+              >auto_awesome</span
+            >
+          </div>
+          <p class="text-sm font-bold text-on-tertiary-container mb-1">
+            Succeeding
+          </p>
+          <h3
+            class="text-4xl font-extrabold text-on-tertiary-container tracking-tight"
+          >
+            892
+          </h3>
+          <div
+            class="mt-4 flex items-center gap-2 text-xs font-bold text-on-tertiary-container"
+          >
+            <span class="px-2 py-1 bg-white/40 rounded-full"
+              >Exceeding Targets</span
+            >
+          </div>
+        </div>
+      </section>
+      <!-- Main Data Table Section -->
+      <section
+        class="bg-surface-container-lowest rounded-xl shadow-[0_4px_40px_rgba(31,26,34,0.03)] overflow-hidden"
+      >
+        <div
+          class="p-8 border-b border-outline-variant/15 flex justify-between items-center"
+        >
+          <div>
+            <h2 class="text-xl font-extrabold text-on-surface tracking-tight">
+              Scholar Performance Monitor
+            </h2>
+            <p class="text-sm text-on-surface-variant">
+              Real-time engagement and completion metrics
+            </p>
+          </div>
+          <div class="flex items-center gap-4">
+            <button
+              class="bg-surface-container-low text-on-surface-variant px-4 py-2 rounded-lg text-sm font-bold hover:bg-surface-container transition-colors flex items-center gap-2"
+            >
+              <span class="material-symbols-outlined text-sm">filter_list</span>
+              Filter
+            </button>
+            <button
+              class="bg-surface-container-low text-on-surface-variant px-4 py-2 rounded-lg text-sm font-bold hover:bg-surface-container transition-colors flex items-center gap-2"
+            >
+              <span class="material-symbols-outlined text-sm">download</span>
+              Export CSV
+            </button>
+          </div>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="w-full border-collapse">
+            <thead>
+              <tr class="bg-surface-container-low/50">
+                <th
+                  class="text-left py-5 px-8 text-xs font-bold text-on-surface-variant uppercase tracking-widest"
+                >
+                  Scholar
+                </th>
+                <th
+                  class="text-left py-5 px-8 text-xs font-bold text-on-surface-variant uppercase tracking-widest"
+                >
+                  Status
+                </th>
+                <th
+                  class="text-left py-5 px-8 text-xs font-bold text-on-surface-variant uppercase tracking-widest"
+                >
+                  Attendance
+                </th>
+                <th
+                  class="text-left py-5 px-8 text-xs font-bold text-on-surface-variant uppercase tracking-widest"
+                >
+                  Assignment Completion
+                </th>
+                <th
+                  class="text-left py-5 px-8 text-xs font-bold text-on-surface-variant uppercase tracking-widest"
+                >
+                  Last Activity
+                </th>
+                <th class="text-right py-5 px-8"></th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-outline-variant/10">
+              <!-- Row 1 -->
+              <tr class="hover:bg-surface-container-low/30 transition-colors">
+                <td class="py-5 px-8">
+                  <div class="flex items-center gap-4">
+                    <div
+                      class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-primary font-bold text-sm"
+                    >
+                      JD
+                    </div>
+                    <div>
+                      <p class="text-sm font-bold text-on-surface">
+                        Jordan Davis
+                      </p>
+                      <p class="text-xs text-on-surface-variant">
+                        ID: #SCH-2940
+                      </p>
+                    </div>
+                  </div>
+                </td>
+                <td class="py-5 px-8">
+                  <span
+                    class="bg-error-container text-on-error-container text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-tighter"
+                    >At Risk</span
+                  >
+                </td>
+                <td class="py-5 px-8">
+                  <div class="w-48">
+                    <div
+                      class="flex justify-between mb-1 text-[10px] font-bold text-on-surface-variant"
+                    >
+                      <span>64%</span>
+                    </div>
+                    <div
+                      class="w-full bg-surface-container-highest rounded-full h-1.5"
+                    >
+                      <div
+                        class="bg-primary h-1.5 rounded-full"
+                        style="width: 64%"
+                      ></div>
+                    </div>
+                  </div>
+                </td>
+                <td class="py-5 px-8">
+                  <div class="w-48">
+                    <div
+                      class="flex justify-between mb-1 text-[10px] font-bold text-on-surface-variant"
+                    >
+                      <span>42%</span>
+                    </div>
+                    <div
+                      class="w-full bg-surface-container-highest rounded-full h-1.5"
+                    >
+                      <div
+                        class="bg-tertiary h-1.5 rounded-full"
+                        style="width: 42%"
+                      ></div>
+                    </div>
+                  </div>
+                </td>
+                <td
+                  class="py-5 px-8 text-sm text-on-surface-variant font-medium"
+                >
+                  Oct 12, 2023
+                </td>
+                <td class="py-5 px-8 text-right">
+                  <button
+                    class="text-outline hover:text-primary transition-colors"
+                  >
+                    <span class="material-symbols-outlined">more_vert</span>
+                  </button>
+                </td>
+              </tr>
+              <!-- Row 2 -->
+              <tr class="hover:bg-surface-container-low/30 transition-colors">
+                <td class="py-5 px-8">
+                  <div class="flex items-center gap-4">
+                    <div
+                      class="w-10 h-10 rounded-full bg-secondary-fixed flex items-center justify-center text-secondary font-bold text-sm"
+                    >
+                      AM
+                    </div>
+                    <div>
+                      <p class="text-sm font-bold text-on-surface">
+                        Aria Montgomery
+                      </p>
+                      <p class="text-xs text-on-surface-variant">
+                        ID: #SCH-3105
+                      </p>
+                    </div>
+                  </div>
+                </td>
+                <td class="py-5 px-8">
+                  <span
+                    class="bg-tertiary-fixed text-on-tertiary-fixed text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-tighter"
+                    >On Track</span
+                  >
+                </td>
+                <td class="py-5 px-8">
+                  <div class="w-48">
+                    <div
+                      class="flex justify-between mb-1 text-[10px] font-bold text-on-surface-variant"
+                    >
+                      <span>98%</span>
+                    </div>
+                    <div
+                      class="w-full bg-surface-container-highest rounded-full h-1.5"
+                    >
+                      <div
+                        class="bg-primary h-1.5 rounded-full"
+                        style="width: 98%"
+                      ></div>
+                    </div>
+                  </div>
+                </td>
+                <td class="py-5 px-8">
+                  <div class="w-48">
+                    <div
+                      class="flex justify-between mb-1 text-[10px] font-bold text-on-surface-variant"
+                    >
+                      <span>95%</span>
+                    </div>
+                    <div
+                      class="w-full bg-surface-container-highest rounded-full h-1.5"
+                    >
+                      <div
+                        class="bg-tertiary h-1.5 rounded-full"
+                        style="width: 95%"
+                      ></div>
+                    </div>
+                  </div>
+                </td>
+                <td
+                  class="py-5 px-8 text-sm text-on-surface-variant font-medium"
+                >
+                  Oct 15, 2023
+                </td>
+                <td class="py-5 px-8 text-right">
+                  <button
+                    class="text-outline hover:text-primary transition-colors"
+                  >
+                    <span class="material-symbols-outlined">more_vert</span>
+                  </button>
+                </td>
+              </tr>
+              <!-- Row 3 -->
+              <tr class="hover:bg-surface-container-low/30 transition-colors">
+                <td class="py-5 px-8">
+                  <div class="flex items-center gap-4">
+                    <div
+                      class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface-variant font-bold text-sm"
+                    >
+                      LK
+                    </div>
+                    <div>
+                      <p class="text-sm font-bold text-on-surface">
+                        Liam Knight
+                      </p>
+                      <p class="text-xs text-on-surface-variant">
+                        ID: #SCH-1182
+                      </p>
+                    </div>
+                  </div>
+                </td>
+                <td class="py-5 px-8">
+                  <span
+                    class="bg-surface-container-highest text-on-surface-variant text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-tighter"
+                    >Caution</span
+                  >
+                </td>
+                <td class="py-5 px-8">
+                  <div class="w-48">
+                    <div
+                      class="flex justify-between mb-1 text-[10px] font-bold text-on-surface-variant"
+                    >
+                      <span>82%</span>
+                    </div>
+                    <div
+                      class="w-full bg-surface-container-highest rounded-full h-1.5"
+                    >
+                      <div
+                        class="bg-primary h-1.5 rounded-full"
+                        style="width: 82%"
+                      ></div>
+                    </div>
+                  </div>
+                </td>
+                <td class="py-5 px-8">
+                  <div class="w-48">
+                    <div
+                      class="flex justify-between mb-1 text-[10px] font-bold text-on-surface-variant"
+                    >
+                      <span>71%</span>
+                    </div>
+                    <div
+                      class="w-full bg-surface-container-highest rounded-full h-1.5"
+                    >
+                      <div
+                        class="bg-tertiary h-1.5 rounded-full"
+                        style="width: 71%"
+                      ></div>
+                    </div>
+                  </div>
+                </td>
+                <td
+                  class="py-5 px-8 text-sm text-on-surface-variant font-medium"
+                >
+                  Oct 14, 2023
+                </td>
+                <td class="py-5 px-8 text-right">
+                  <button
+                    class="text-outline hover:text-primary transition-colors"
+                  >
+                    <span class="material-symbols-outlined">more_vert</span>
+                  </button>
+                </td>
+              </tr>
+              <!-- Row 4 -->
+              <tr class="hover:bg-surface-container-low/30 transition-colors">
+                <td class="py-5 px-8">
+                  <div class="flex items-center gap-4">
+                    <div
+                      class="w-10 h-10 rounded-full bg-primary-fixed-dim flex items-center justify-center text-primary font-bold text-sm"
+                    >
+                      SC
+                    </div>
+                    <div>
+                      <p class="text-sm font-bold text-on-surface">
+                        Sophia Chen
+                      </p>
+                      <p class="text-xs text-on-surface-variant">
+                        ID: #SCH-4492
+                      </p>
+                    </div>
+                  </div>
+                </td>
+                <td class="py-5 px-8">
+                  <span
+                    class="bg-tertiary-fixed text-on-tertiary-fixed text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-tighter"
+                    >On Track</span
+                  >
+                </td>
+                <td class="py-5 px-8">
+                  <div class="w-48">
+                    <div
+                      class="flex justify-between mb-1 text-[10px] font-bold text-on-surface-variant"
+                    >
+                      <span>92%</span>
+                    </div>
+                    <div
+                      class="w-full bg-surface-container-highest rounded-full h-1.5"
+                    >
+                      <div
+                        class="bg-primary h-1.5 rounded-full"
+                        style="width: 92%"
+                      ></div>
+                    </div>
+                  </div>
+                </td>
+                <td class="py-5 px-8">
+                  <div class="w-48">
+                    <div
+                      class="flex justify-between mb-1 text-[10px] font-bold text-on-surface-variant"
+                    >
+                      <span>88%</span>
+                    </div>
+                    <div
+                      class="w-full bg-surface-container-highest rounded-full h-1.5"
+                    >
+                      <div
+                        class="bg-tertiary h-1.5 rounded-full"
+                        style="width: 88%"
+                      ></div>
+                    </div>
+                  </div>
+                </td>
+                <td
+                  class="py-5 px-8 text-sm text-on-surface-variant font-medium"
+                >
+                  Oct 15, 2023
+                </td>
+                <td class="py-5 px-8 text-right">
+                  <button
+                    class="text-outline hover:text-primary transition-colors"
+                  >
+                    <span class="material-symbols-outlined">more_vert</span>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div
+          class="p-8 bg-surface-container-low/20 flex justify-between items-center border-t border-outline-variant/10"
+        >
+          <p class="text-xs font-bold text-on-surface-variant">
+            Showing 1 to 4 of 1,284 Scholars
+          </p>
+          <div class="flex gap-2">
+            <button
+              class="w-8 h-8 rounded-lg flex items-center justify-center bg-white border border-outline-variant/30 text-on-surface-variant hover:border-primary transition-all"
+            >
+              <span class="material-symbols-outlined text-sm"
+                >chevron_left</span
+              >
+            </button>
+            <button
+              class="w-8 h-8 rounded-lg flex items-center justify-center bg-primary text-white font-bold text-xs"
+            >
+              1
+            </button>
+            <button
+              class="w-8 h-8 rounded-lg flex items-center justify-center bg-white border border-outline-variant/30 text-on-surface-variant hover:border-primary transition-all font-bold text-xs"
+            >
+              2
+            </button>
+            <button
+              class="w-8 h-8 rounded-lg flex items-center justify-center bg-white border border-outline-variant/30 text-on-surface-variant hover:border-primary transition-all font-bold text-xs"
+            >
+              3
+            </button>
+            <button
+              class="w-8 h-8 rounded-lg flex items-center justify-center bg-white border border-outline-variant/30 text-on-surface-variant hover:border-primary transition-all"
+            >
+              <span class="material-symbols-outlined text-sm"
+                >chevron_right</span
+              >
+            </button>
+          </div>
+        </div>
+      </section>
+      <!-- Insights Bento Grid -->
+      <section class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div
+          class="lg:col-span-2 bg-surface-container-low p-8 rounded-xl relative overflow-hidden border border-outline-variant/5"
+        >
+          <div class="flex justify-between items-start mb-8">
+            <div>
+              <h3 class="text-lg font-extrabold text-on-surface tracking-tight">
+                Engagement Hotspots
+              </h3>
+              <p class="text-sm text-on-surface-variant">
+                Attendance trends over the last 30 days
+              </p>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="w-3 h-3 rounded-full bg-primary"></span>
+              <span class="text-[10px] font-bold text-on-surface-variant"
+                >Current Term</span
+              >
+            </div>
+          </div>
+          <!-- Visual Placeholder for Chart -->
+          <div class="h-64 flex items-end gap-2 px-2">
+            <div class="flex-1 bg-primary/20 rounded-t-lg h-[40%]"></div>
+            <div class="flex-1 bg-primary/30 rounded-t-lg h-[60%]"></div>
+            <div class="flex-1 bg-primary/20 rounded-t-lg h-[50%]"></div>
+            <div class="flex-1 bg-primary/40 rounded-t-lg h-[80%]"></div>
+            <div class="flex-1 bg-primary/60 rounded-t-lg h-[90%]"></div>
+            <div class="flex-1 bg-primary/50 rounded-t-lg h-[70%]"></div>
+            <div class="flex-1 bg-primary/40 rounded-t-lg h-[65%]"></div>
+            <div class="flex-1 bg-primary/30 rounded-t-lg h-[55%]"></div>
+            <div class="flex-1 bg-primary/20 rounded-t-lg h-[45%]"></div>
+            <div class="flex-1 bg-primary/10 rounded-t-lg h-[30%]"></div>
+            <div class="flex-1 bg-primary/40 rounded-t-lg h-[75%]"></div>
+            <div class="flex-1 bg-primary/70 rounded-t-lg h-[95%]"></div>
+          </div>
+        </div>
+        <div
+          class="bg-surface-container-highest p-8 rounded-xl flex flex-col justify-between border border-outline-variant/5"
+        >
+          <div>
+            <div
+              class="w-12 h-12 bg-white rounded-full flex items-center justify-center mb-6 shadow-sm"
+            >
+              <span class="material-symbols-outlined text-primary"
+                >psychology</span
+              >
+            </div>
+            <h3
+              class="text-lg font-extrabold text-on-surface tracking-tight leading-tight mb-2"
+            >
+              Curator Recommendation
+            </h3>
+            <p class="text-sm text-on-surface-variant leading-relaxed">
+              Based on recent data, 12 scholars in the "Caution" segment are
+              trending toward "At Risk" due to missing 'Modern History'
+              assignments.
+            </p>
+          </div>
+          <button
+            class="mt-8 text-primary font-bold text-sm flex items-center gap-2 hover:gap-3 transition-all"
+          >
+            View Targeted Intervention
+            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+          </button>
+        </div>
+      </section>
+    </main>
+    <!-- FAB Suppression Logic: Not rendered on dashboard to prioritize content canvas clean aesthetic -->
+  </body>
+</html>
